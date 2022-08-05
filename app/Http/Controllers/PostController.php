@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-   public function index(Post $post)
+    public function index(Post $post)
     {
-    return $post->get();
+        //ViewにController内で取得した変数を渡したい場合はViewインスタンスに対してwithメソッドを使用する
+        return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);  
     }
 }
+?>

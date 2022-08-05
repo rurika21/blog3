@@ -13,5 +13,5 @@ use Illuminate\Support\Facades\Routes;
 |
 */
 
-//postsにGETリクエストが来たらPostControllerのindexメソッドを実行する
-Route::get('/posts', 'PostController@index');
+//Controllerでデータを取得し、Controllerからデータを受け渡す形でViewを呼び出す
+Route::get('/', 'PostController@index');
