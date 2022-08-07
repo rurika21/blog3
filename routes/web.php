@@ -19,3 +19,8 @@ Route::get('/posts/{post}', 'PostController@show');
 //Controllerでデータを取得し、Controllerからデータを受け渡す形でViewを呼び出す
 Route::get('/', 'PostController@index');
 
+Route::post('/posts', 'PostController@store');
+Route::get('/posts/create', 'PostController@create');
+Route::get('/posts/{post}', 'PostController@show');
+=======
+
