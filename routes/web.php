@@ -1,7 +1,4 @@
 <?php
-
-use Illuminate\Support\Facades\Routes;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,5 +10,12 @@ use Illuminate\Support\Facades\Routes;
 |
 */
 
+
+//postsにGETリクエストが来たらPostControllerのindexメソッドを実行する
+Route::get('/', 'PostController@index');
+Route::get('/posts/{post}', 'PostController@show');
+?>
+
 //Controllerでデータを取得し、Controllerからデータを受け渡す形でViewを呼び出す
 Route::get('/', 'PostController@index');
+
