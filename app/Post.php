@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    
-    public function getPaginateByLimit(int $limit_count = 10)
+    protected $fillable = [
+        'title',
+        'body',
+];
+
+    public function getPaginate(int $limit_count = 10)
     {
         //updated_atで降順に並べたあと、limitで件数制限をかける
         //orderByメソッドはレコード（データベースの行）の並べ替えを行う
